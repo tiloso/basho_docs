@@ -69,7 +69,7 @@ hostname in the variable `HOSTNAME`, send that information to
 packagecloud to autogenerate a `.list` file, and then store the return
 value in a file called `basho.list`, which is stored in the
 `/etc/apt/sources.list.d` directory. This example script is specific to
-the Precise Ubuntu distribution:
+the Trusty Ubuntu distribution:
 
 ```bash
 #!/bin/bash
@@ -77,7 +77,7 @@ the Precise Ubuntu distribution:
 HOSTNAME=`hostname -f`
 FILENAME=/etc/apt/sources/list.d/basho.list
 OS=ubuntu
-DIST=precise
+DIST=trusty
 PACKAGE_CLOUD_RIAK_DIR=https://packagecloud.io/install/repositories/basho/riak
 curl "${PACKAGE_CLOUD_RIAK_DIR}/config_file.list?os=${OS}&dist=${DIST}&$name=${HOSTNAME}" > $FILENAME
 ```
